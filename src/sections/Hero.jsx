@@ -110,6 +110,7 @@ export const Hero = () => {
             {/* Socials */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Find Me:</span>
+              // eslint-disable-next-line no-unused-vars
               {socials.map(({ Icon, label, href }) => (
                 <a
                   key={label}
