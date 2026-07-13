@@ -55,7 +55,7 @@ export const Hero = () => {
       <div className="absolute inset-0 -z-20">
         <img src="/Starry Sky.jpg" alt="Starry Sky" className="w-full h-full object-cover opacity-40" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
 
       {/* Floating Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
@@ -131,7 +131,7 @@ export const Hero = () => {
             <div className="relative max-w-md mx-auto">
               <div 
                 className="absolute inset-0 
-                rounded-3xl bg-gradient-to-br 
+                rounded-3xl bg-linear-to-br 
                 from-primary/30 via-transparent 
                 to-primary/10 blur-2xl animate-pulse"
               />
@@ -139,7 +139,7 @@ export const Hero = () => {
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img src="phoenix_logo.png" 
                  alt="Maame Abena logo"
-                 className="w-full aspect-[4/5] object-cover rounded-2xl " />
+                 className="w-full aspect-4/5 object-cover rounded-2xl " />
               </div>
 
               {/*floating badge*/}
@@ -158,7 +158,7 @@ export const Hero = () => {
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
              {[...skills,...skills].map((skill, index) => (
-               <div key={index} className="flex-shrink-0 px-8 py-4"> 
+               <div key={index} className="shrink-0 px-8 py-4"> 
                 <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">{skill}</span>
                 </div>
              ))}
