@@ -137,7 +137,7 @@ export const Hero = () => {
               />
 
               <div className="relative glass rounded-3xl p-2 glow-border">
-                <img src="logo.png" 
+                <img src="phoenix_logo.png" 
                  alt="Maame Abena logo"
                  className="w-full aspect-[4/5] object-cover rounded-2xl " />
               </div>
