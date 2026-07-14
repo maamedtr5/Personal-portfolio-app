@@ -6,7 +6,7 @@ const projects = [
     {
         title: "Volunteer Web App",
         description: "A web application for managing volunteer activities and registrations. It allows users to browse and sign up for volunteer opportunities, track their volunteer hours, and receive notifications about upcoming events.",
-        image: "/nfm volunteer homepage.png",
+        image: "/nfm-volunteer-homepage.png",
         link: "https://nfm-volunteer.vercel.app/",
         github: "https://github.com/maamedtr5/volunteer-web-app.git",
         tags: ["React", "Node.js", "PostgreSQL", "Express"] 

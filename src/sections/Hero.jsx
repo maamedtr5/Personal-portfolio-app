@@ -9,7 +9,7 @@ const seededRandom = (seed) => {
 
 function FloatingDot({ index }) {
   const style = {
-    backgroundColor: "#0aefdf",
+    backgroundColor: "var(--color-primary)",
     left: `${seededRandom(index * 1.1) * 100}%`,
     top: `${seededRandom(index * 2.2) * 100}%`,
     animation: `slow-drift ${15 + seededRandom(index * 3.3) * 20}s ease-in-out infinite`,
@@ -53,7 +53,7 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-20">
-        <img src="/Starry Sky.jpg" alt="Starry Sky" className="w-full h-full object-cover opacity-40" />
+        <img src="/starry-sky.jpg" alt="Starry Sky" className="w-full h-full object-cover opacity-40" />
       </div>
       <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
 
@@ -97,11 +97,16 @@ export const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button
+                size="lg"
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Contact Me
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton >
+              <AnimatedBorderButton as="a" href="/resume.pdf" download="Maame-Abena-Adjabeng-Resume.pdf">
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
