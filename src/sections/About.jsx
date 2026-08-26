@@ -40,7 +40,7 @@ export const About = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I'm a software builder and developer focused on crafting user-centric
-                digital products with React and Node.js ;from ideas to fully fleshed-out applications.
+                digital products with React and Node.js from ideas to fully fleshed-out applications.
               </p>
               <p>
                 Outside of code, I'm curious about new technologies and how people use them,
