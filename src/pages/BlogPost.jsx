@@ -60,7 +60,7 @@ const markdownComponents = {
       <code className="text-sm">{children}</code>
     ),
   pre: ({ children }) => (
-    <pre className="glass rounded-2xl p-5 overflow-x-auto mb-6 text-sm">
+    <pre className="bg-surface border border-border rounded-2xl p-5 overflow-x-auto mb-6 text-sm">
       {children}
     </pre>
   ),
@@ -83,9 +83,6 @@ export const BlogPost = () => {
 
   return (
     <section className="py-32 relative overflow-hidden min-h-screen">
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-
       <div className="container mx-auto px-6 relative z-10 pt-16 max-w-3xl">
         <Link
           to="/blog"
@@ -119,7 +116,7 @@ export const BlogPost = () => {
             )}
           </header>
 
-          <div className="glass rounded-3xl p-6 md:p-10">
+          <div className="rounded-3xl border border-border p-6 md:p-10">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={markdownComponents}

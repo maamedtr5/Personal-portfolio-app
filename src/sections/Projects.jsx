@@ -24,11 +24,6 @@ const projects = [
 export const Projects = () => {
     return ( 
         <section id="projects" className="py-32 relative overflow-hidden">
-            {/* Bg glows */}
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"/>
-            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl"/>
-            
-            {/* FIXED: Single container div */}
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Title */}
                 <div className="text-center mx-auto max-w-3xl mb-16">
@@ -42,8 +37,7 @@ export const Projects = () => {
                         </span>
                     </h2>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        A selection of my recent work, from complex web applications to
-                        innovative tools that solve real-world problems.
+                        A selection of recent work, from web applications to tools that solve real problems.
                     </p>
                 </div>
 
@@ -52,7 +46,7 @@ export const Projects = () => {
                     {projects.map((project, idx) => (
                         <div
                             key={idx}
-                            className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+                            className="group rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-colors animate-fade-in md:row-span-1"
                             style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                         >
                             {/* Image */}
@@ -70,7 +64,7 @@ export const Projects = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                        className="p-3 rounded-full bg-background/80 border border-border hover:bg-primary hover:text-primary-foreground transition-all"
                                     >
                                         <ArrowUpRight className="w-5 h-5" />
                                     </a>
@@ -78,7 +72,7 @@ export const Projects = () => {
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                                        className="p-3 rounded-full bg-background/80 border border-border hover:bg-primary hover:text-primary-foreground transition-all"
                                     >
                                         <Github className="w-5 h-5" />
                                     </a>

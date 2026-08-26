@@ -1,11 +1,11 @@
 ---
 title: Welcome to My Blog
 date: 2026-07-01
-excerpt: A quick introduction to what I'll be writing about here — code, projects, and lessons learned along the way.
+excerpt: A quick introduction to what I'll be writing about here code, projects, and lessons learned along the way.
 tags: [Personal, Announcement]
 ---
 
-Hi, I'm **Maame Abena** — welcome to my new blog!
+Hi, I'm **Maame Abena** welcome to my new blog!
 
 This is where I'll be sharing:
 

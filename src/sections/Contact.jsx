@@ -81,10 +81,6 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Title */}
         <div className="text-center mx-auto max-w-3xl mb-16">
@@ -98,8 +94,7 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and I'll get back to you as soon as possible.
+            Have a project in mind? Send a message and I'll get back to you.
           </p>
         </div>
 
@@ -163,7 +158,7 @@ export const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-primary/20 backdrop-blur-md border border-primary/40 text-primary-foreground font-semibold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors hover:bg-primary/30 hover:border-primary/60"
+                className="w-full font-semibold py-3 rounded-xl flex items-center justify-center gap-2"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -195,10 +190,9 @@ export const Contact = () => {
             </form>
           </div>
 
-          {/* Right column: Contact Info and Availability */}
-          <div className="flex flex-col justify-center space-y-4 h-full">
-            {/* Contact Info */}
-            <div className="glass p-8 rounded-3xl border border-primary/30 flex-1 overflow-y-auto">
+          {/* Right column: Contact Info */}
+          <div className="flex flex-col justify-center h-full">
+            <div className="p-8 rounded-3xl border border-border flex-1">
               {contactInfo.map((item, i) =>
                 item.href ? (
                   <a
@@ -234,19 +228,6 @@ export const Contact = () => {
                   </div>
                 )
               )}
-            </div>
-
-            {/* Currently Available Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30 w-full flex-shrink-0">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium"> Currently Available </span>
-              </div>
-              <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities, exciting projects and collaborations.
-                If you need a passionate developer to bring your ideas to life, feel free to reach out.
-                Let's create something amazing together!
-              </p>
             </div>
           </div>
         </div>

@@ -7,10 +7,6 @@ export const Blog = () => {
 
   return (
     <section className="py-32 relative overflow-hidden min-h-screen">
-      {/* Bg glows — consistent with the rest of the site */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-
       <div className="container mx-auto px-6 relative z-10 pt-16">
         {/* Header */}
         <div className="text-center mx-auto max-w-3xl mb-16 animate-fade-in">
@@ -32,7 +28,7 @@ export const Blog = () => {
         {/* Posts list */}
         {posts.length === 0 ? (
           <p className="text-center text-muted-foreground">
-            No posts yet — check back soon.
+            No posts yet check back soon.
           </p>
         ) : (
           <div className="max-w-3xl mx-auto space-y-4">
@@ -40,7 +36,7 @@ export const Blog = () => {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className="group block glass rounded-2xl p-6 md:p-8 animate-fade-in hover:border-primary/40 border border-transparent transition-all duration-300"
+                className="group block rounded-2xl p-6 md:p-8 animate-fade-in hover:border-primary/40 border border-border transition-colors duration-300"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">

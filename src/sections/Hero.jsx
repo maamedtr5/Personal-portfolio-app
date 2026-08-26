@@ -1,22 +1,6 @@
 import Button from "../components/Button";
-import { ArrowRight, ChevronDown,Download } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-
-const seededRandom = (seed) => {
-  const x = Math.sin(seed) * 10000;
-  return x - Math.floor(x);
-};
-
-function FloatingDot({ index }) {
-  const style = {
-    backgroundColor: "var(--color-primary)",
-    left: `${seededRandom(index * 1.1) * 100}%`,
-    top: `${seededRandom(index * 2.2) * 100}%`,
-    animation: `slow-drift ${15 + seededRandom(index * 3.3) * 20}s ease-in-out infinite`,
-    animationDelay: `${seededRandom(index * 4.4) * 5}s`,
-  };
-  return <div className="absolute w-1.5 h-1.5 rounded-full opacity-60" style={style} />;
-}
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -38,7 +22,7 @@ const socials = [
 const skills = [
   "React",
   "Node.js",
-  "Express",  
+  "Express",
   "PostgreSql",
   "Prisma",
   "Vercel",
@@ -53,45 +37,31 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-20">
-        <img src="/starry-sky.jpg" alt="Starry Sky" className="w-full h-full object-cover opacity-40" />
+        <img src="/starry-sky.jpg" alt="Starry Sky" className="w-full h-full object-cover opacity-30" />
       </div>
-      <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
-
-      {/* Floating Dots */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        {Array.from({ length: 30 }).map((_, index) => (
-          <FloatingDot key={index} index={index} />
-        ))}
-      </div>
+      <div className="absolute inset-0 bg-linear-to-b from-background/40 via-background/85 to-background" />
 
       {/* Content */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column */}
           <div className="space-y-8">
-
-            {/* Badge */}
-            <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • Full Stack Developer
-              </span>
-            </div>
+            <span className="text-sm text-primary tracking-wide">
+              Software Engineer · Full Stack Developer
+            </span>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text"> seamless</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
+                Crafting <span className="text-primary">seamless</span>
                 <br />digital
                 <span className="font-serif italic font-normal text-white">
                   <br />journeys
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Maame Abena, a software builder. I specialize in React and Node.js,
-                leveraging modern backend technologies to deliver scalable solutions. My focus
-                is on crafting user‑centric digital experiences that bring client visions to life.
-                Every project is an opportunity to merge creativity with reliable engineering.
+                I'm Maame Abena, a software engineer focused on React and Node.js.
+                I build scalable, user-centric web applications from front to back.
               </p>
             </div>
 
@@ -115,7 +85,6 @@ export const Hero = () => {
             {/* Socials */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Find Me:</span>
-              // eslint-disable-next-line no-unused-vars
               {socials.map(({ Icon, label, href }) => (
                 <a
                   key={label}
@@ -123,7 +92,7 @@ export const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-full glass text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  className="p-2 rounded-full border border-border text-foreground hover:border-primary/50 hover:text-primary transition-colors duration-300"
                 >
                   <Icon />
                 </a>
@@ -133,57 +102,43 @@ export const Hero = () => {
 
           {/* Right column - Profile Image */}
           <div className="relative animate-fade-in animation-delay-300">
-            {/*Profile Image*/}
             <div className="relative max-w-md mx-auto">
-              <div 
-                className="absolute inset-0 
-                rounded-3xl bg-linear-to-br 
-                from-primary/30 via-transparent 
-                to-primary/10 blur-2xl animate-pulse"
-              />
-
-              <div className="relative glass rounded-3xl p-2 glow-border">
-                <img src="phoenix_logo.png" 
-                 alt="Maame Abena logo"
-                 className="w-full aspect-4/5 object-cover rounded-2xl " />
-              </div>
-
-              {/*floating badge*/}
-              <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float ">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"/>
-                  <span className="text-sm font-medium">Available for work</span>
-                </div>
+              <div className="relative rounded-3xl border border-border p-2">
+                <img
+                  src="phoenix_logo.png"
+                  alt="Maame Abena logo"
+                  className="w-full aspect-4/5 object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>
         </div>
+
         {/* Skills List */}
         <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">Technologies And Services I Work With</p>
-          <div className="relative overflow-hidden">
-            <div className="flex animate-marquee">
-             {[...skills,...skills].map((skill, index) => (
-               <div key={index} className="shrink-0 px-8 py-4"> 
-                <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">{skill}</span>
-                </div>
-             ))}
-            </div>
+          <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I Work With</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="text-lg font-semibold text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
-          <div
-             className="absolute bottom-8 left-1/2 -translate-x-1/2 
-             animate-fade-in animation-delay-800"
-            >
-              <a
-               href="#about"
-               className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
-              >
-             <span className="text-xs uppercase tracking-wider">Scroll</span>
-             <ChevronDown className="w-6 h-6 animate-bounce" />
-              </a>
-             </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+          <a
+            href="#about"
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+          >
+            <span className="text-xs uppercase tracking-wider">Scroll</span>
+            <ChevronDown className="w-6 h-6" />
+          </a>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 };

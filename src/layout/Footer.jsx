@@ -49,7 +49,7 @@ export const Footer = () => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                className="p-2 rounded-full border border-border hover:border-primary/40 hover:text-primary transition-all"
               >
                 <social.icon className="w-5 h-5" />
               </a>

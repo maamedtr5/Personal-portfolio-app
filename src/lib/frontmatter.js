@@ -1,4 +1,4 @@
-// Minimal YAML-frontmatter parser — no external deps needed.
+// Minimal YAML-frontmatter parser no external deps needed.
 // Handles simple `key: value` pairs and `tags: [a, b, c]` style arrays,
 // which is all a blog post needs.
 export function parseFrontmatter(raw) {
