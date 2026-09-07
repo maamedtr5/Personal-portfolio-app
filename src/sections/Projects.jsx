@@ -9,15 +9,42 @@ const projects = [
         image: "/nfm-volunteer-homepage.png",
         link: "https://nfm-volunteer.vercel.app/",
         github: "https://github.com/maamedtr5/volunteer-web-app.git",
-        tags: ["React", "Node.js", "PostgreSQL", "Express"] 
+        tags: ["React", "Node.js", "PostgreSQL", "Express"]
     },
     {
-        title: "Project Two",
-        description: "Description for your second project goes here.",
-        image: "/placeholder-project.png",
-        link: "#",
-        github: "#",
-        tags: ["React", "TypeScript", "Tailwind"] 
+        title: "Graphic Designer Portfolio",
+        description: "A portfolio and work-gallery site built for a graphic designer, with a Supabase-backed image gallery, lightbox viewer, and an admin upload flow for adding new pieces.",
+        image: "/graphic-designer-portfolio.png",
+        link: "https://kwaku-ankomah-portfolio.vercel.app/",
+        github: "https://github.com/maamedtr5/graphic-designer-portfolio",
+        tags: ["React", "TypeScript", "Vite", "Supabase"]
+    },
+    {
+        title: "Hair Booking Platform",
+        description: "A full-stack appointment booking platform for hair salons, with calendar scheduling, Stripe payments, automated SMS/email reminders, and Google Calendar sync.",
+        image: "/hair-booking-platform.png",
+        link: null,
+        github: "https://github.com/maamedtr5/hair-booking-frontend",
+        github2: "https://github.com/maamedtr5/hair-booking-site",
+        status: "In development",
+        tags: ["React", "TypeScript", "Express", "Prisma", "PostgreSQL", "Stripe"]
+    },
+    {
+        title: "Personal Portfolio Website",
+        description: "This site — a from-scratch portfolio and blog built with React and Vite, with a markdown-based blog system and no CMS.",
+        image: "/personal-portfolio-site.png",
+        link: "https://personal-portfolio-app-maa.vercel.app/",
+        github: "https://github.com/maamedtr5/Personal-portfolio-app",
+        tags: ["React", "Vite", "Tailwind CSS", "React Router"]
+    },
+    {
+        title: "NascoTech CMS Suite",
+        description: "A content management system suite built at NascoTech, comprising 7 internal projects unified under a single SSO portal for authentication and access control.",
+        image: "/nascotech-cms.png",
+        link: null,
+        github: "https://github.com/Nasco-Feeding-Minds-Projects",
+        status: "Private · Internal",
+        tags: ["Full Stack", "SSO", "Internal Tools"]
     },
 ];
 
@@ -57,17 +84,19 @@ export const Projects = () => {
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-                                
+
                                 {/* Overlay Links */}
                                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 rounded-full bg-background/80 border border-border hover:bg-primary hover:text-primary-foreground transition-all"
-                                    >
-                                        <ArrowUpRight className="w-5 h-5" />
-                                    </a>
+                                    {project.link && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 rounded-full bg-background/80 border border-border hover:bg-primary hover:text-primary-foreground transition-all"
+                                        >
+                                            <ArrowUpRight className="w-5 h-5" />
+                                        </a>
+                                    )}
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -81,11 +110,17 @@ export const Projects = () => {
 
                             {/* Content */}
                             <div className="p-6 space-y-4">
-                                <div className="flex items-start justify-between">
+                                <div className="flex items-start justify-between gap-3">
                                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                                         {project.title}
                                     </h3>
-                                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                    {project.status ? (
+                                        <span className="shrink-0 text-xs px-3 py-1 rounded-full border border-border text-muted-foreground">
+                                            {project.status}
+                                        </span>
+                                    ) : (
+                                        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />
+                                    )}
                                 </div>
                                 <p className="text-muted-foreground text-sm">
                                     {project.description}
@@ -100,6 +135,16 @@ export const Projects = () => {
                                         </span>
                                     ))}
                                 </div>
+                                {project.github2 && (
+                                    <div className="flex items-center gap-4 text-xs text-muted-foreground pt-1">
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary underline underline-offset-2">
+                                            Frontend repo
+                                        </a>
+                                        <a href={project.github2} target="_blank" rel="noopener noreferrer" className="hover:text-primary underline underline-offset-2">
+                                            Backend repo
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
