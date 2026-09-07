@@ -47,21 +47,21 @@ export const Hero = () => {
           {/* Left column */}
           <div className="space-y-8">
             <span className="text-sm text-primary tracking-wide">
-              Software Engineer · Full Stack Developer
+              Software Engineer
             </span>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-                Crafting <span className="text-primary">seamless</span>
-                <br />digital
-                <span className="font-serif italic font-normal text-white">
-                  <br />journeys
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
+                Full-stack developer.
+                <br />
+                <span className="font-mono font-medium text-primary text-3xl md:text-4xl lg:text-5xl">
+                  React + Node.js.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                I'm Maame Abena, a software engineer focused on React and Node.js.
-                I build scalable, user-centric web applications from front to back.
+                I'm Maame Abena, a software engineer who builds scalable,
+                user-centric web applications from front to back.
               </p>
             </div>
 
